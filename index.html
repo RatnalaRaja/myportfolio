@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratnala Raja | Associate Software Engineer • Cloud & AI Architect</title>
+  <meta name="description"
+    content="Portfolio of Ratnala Raja - Associate Software Engineer at Tricon Infotech. Specializing in AWS Cloud Infrastructure, Generative AI & LLMs, FastAPI, and Distributed Systems.">
+  <meta name="keywords"
+    content="Ratnala Raja, Cloud Engineer, DevOps, AWS, Azure, Generative AI, LLM, FastAPI, Python, Software Engineer Bangalore">
+  <meta name="author" content="Ratnala Raja">
+  <meta property="og:title" content="Ratnala Raja | Cloud & AI Software Engineer">
+  <meta property="og:description"
+    content="Explore interactive 3D portfolio featuring Cloud Infrastructure, GenAI, and High-Performance Backend Systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/97797913?v=4">
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23060813'/><text x='50%' y='68%' font-size='60' font-weight='bold' font-family='sans-serif' fill='%2300f5d4' text-anchor='middle'>R</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Three.js Interactive Background Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Interactive Frosted Glass Cursor Spotlight -->
+  <div class="glass-cursor-lens" id="glass-cursor-lens"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-brand">
+      <div class="brand-monogram">RR</div>
+      <div class="brand-text">
+        <span class="brand-name">Ratnala Raja</span>
+        <span class="brand-tag">Cloud • AI • Systems</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#terminal" class="nav-link">Terminal</a></li>
+      <li><a href="#certifications" class="nav-link">Credentials</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn-icon" id="audio-toggle" title="Toggle Ambient Audio SFX" aria-label="Toggle Sound">
+        <div class="audio-waves muted" id="audio-indicator">
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+        </div>
+      </button>
+
+      <a href="Ratnala_Raja_CV.pdf" download="Ratnala_Raja_CV.pdf" class="btn-resume" id="nav-resume-btn">
+        <i class="fa-solid fa-file-arrow-down"></i>
+        <span>Resume</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Layer -->
+  <main class="ui-container">
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="status-dot"></span>
+            <span>Available for High-Impact Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Engineering the Future with <br>
+            <span class="gradient-text">Cloud & AI Intelligence</span>
+          </h1>
+
+          <div class="typewriter-wrapper">
+            <span class="font-mono text-muted">></span>
+            <span id="typewriter-text"></span>
+            <span class="typewriter-cursor"></span>
+          </div>
+
+          <p class="hero-bio">
+            I'm <strong>Ratnala Raja</strong>, an Associate Software Engineer at <strong>Tricon Infotech</strong>.
+            I specialize in architecting resilient <strong>AWS & Azure cloud infrastructure</strong>, developing
+            production-grade <strong>Generative AI / LLM workflows</strong>, and engineering high-throughput
+            <strong>backend microservices</strong>.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn-primary">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Explore Projects</span>
+            </a>
+            <a href="#terminal" class="btn-secondary">
+              <i class="fa-solid fa-terminal"></i>
+              <span>Open 3D Terminal</span>
+            </a>
+            <a href="Ratnala_Raja_CV.pdf" target="_blank" class="btn-secondary">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>View CV</span>
+            </a>
+          </div>
+
+          <div class="hero-stats" id="hero-stats-container">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Hero 3D Holographic Card with Animated Character -->
+        <div class="hero-visual-card">
+          <div class="holo-avatar-card" id="holo-avatar-card">
+            <!-- 3D Interactive Avatar Stage -->
+            <div class="card-avatar-wrap" id="card-avatar-wrap" title="Interactive 3D Character • Ratnala Raja">
+              <div class="card-avatar-viewport" id="card-avatar-viewport">
+                <div class="card-character-stage" id="card-character-stage">
+                  <img src="raja_animated_resting.png" alt="Ratnala Raja 3D Character" class="card-boy-img"
+                    id="card-boy-img">
+                </div>
+              </div>
+
+              <!-- Speech Bubble: 'Hii! I am Raja' on Load / Click -->
+              <div class="card-speech-bubble" id="card-speech-bubble">
+                <div class="speech-bubble-row">
+                  <span class="speech-wave">👋</span>
+                  <span class="speech-main-text">Hii! I am Raja</span>
+                </div>
+                <div class="speech-sub-text">Welcome to my space!</div>
+              </div>
+
+              <div class="card-3d-hint" id="card-3d-hint"><i class="fa-solid fa-arrows-to-dot"></i>Ratnala Raja</div>
+            </div>
+
+            <!-- Card Information Below -->
+            <div class="holo-card-infoact">
+              <h2 class="holo-name">Ratnala Raja</h2>
+              <div class="holo-role">Associate Software Engineer</div>
+              <div class="holo-loc">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Bangalore, India</span>
+              </div>
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="holo-floating-badge badge-aws">
+              <i class="fa-brands fa-aws"></i>
+              <span>AWS AI Certified</span>
+            </div>
+            <div class="holo-floating-badge badge-genai">
+              <i class="fa-solid fa-brain"></i>
+              <span>GenAI & LLMs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-header">
+        <div class="section-badge"><i class="fa-solid fa-user-astronaut"></i> Background</div>
+        <h2 class="section-title">Architecting Scalable Systems</h2>
+        <p class="section-subtitle">Bridging resilient cloud infrastructure with next-generation autonomous AI
+          capabilities.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass-card about-summary">
+          <h3 class="gradient-text" style="font-size: 1.5rem; margin-bottom: 1rem;">Who I Am</h3>
+          <p>
+            I am a software engineer with a deep passion for cloud native architectures, distributed systems, and
+            cutting-edge artificial intelligence.
+            With a degree in <strong>Computer Science & Engineering (IoT)</strong> from Aditya College of Engineering
+            and Technology and industry experience at
+            <strong>Tricon Infotech</strong> and <strong>Technical Hub</strong>, I build software that scales reliably
+            under intense demand.
+          </p>
+          <div class="highlight-quote">
+            "Software engineering isn't just about writing code; it's about eliminating friction, automating
+            infrastructure, and crafting intelligent systems that solve tangible problems."
+          </div>
+          <p>
+            When I'm not deploying multi-region Terraform modules or tuning LLM context windows, you'll find me solving
+            complex algorithmic problems on HackerRank and LeetCode, or exploring system internals.
+          </p>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div class="feature-title">Cloud Architecture</div>
+            <div class="feature-desc">AWS EC2, Lambda, S3, VPC, RDS, DynamoDB, SES, and Azure multi-tier scalable
+              design.</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="feature-title">GenAI & LLMs</div>
+            <div class="feature-desc">RAG pipelines, LangChain, vector embeddings, AI autonomous agents, and computer
+              vision.</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
+            <div class="feature-title">DevOps & Automation</div>
+            <div class="feature-desc">Terraform IaC, Docker containerization, Kubernetes orchestration, Jenkins & GitHub
+              Actions.</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-server"></i></div>
+            <div class="feature-title">High-Speed Backends</div>
+            <div class="feature-desc">FastAPI asynchronous APIs, Django, Node.js microservices, Redis caching, and
+              relational databases.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-badge"><i class="fa-solid fa-bolt"></i> Tech Stack</div>
+        <h2 class="section-title">Technical Competencies</h2>
+        <p class="section-subtitle">Categorized mastery across cloud platforms, AI frameworks, backend engines, and core
+          computer science.</p>
+      </div>
+
+      <div class="skills-nav-tabs">
+        <button class="skill-tab-btn active" data-category="cloudDevops">Cloud & DevOps</button>
+        <button class="skill-tab-btn" data-category="aiGenAI">AI & GenAI</button>
+        <button class="skill-tab-btn" data-category="backend">Backend & DB</button>
+        <button class="skill-tab-btn" data-category="languagesDsa">Languages & DSA</button>
+      </div>
+
+      <div class="skills-grid" id="skills-grid-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </section>
+
+    <!-- Experience & Timeline Section -->
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-badge"><i class="fa-solid fa-briefcase"></i> Trajectory</div>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">Real-world impact in enterprise software, cloud infrastructure deployment, and
+          distributed systems.</p>
+      </div>
+
+      <div class="timeline" id="experience-timeline">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-badge"><i class="fa-solid fa-cubes"></i> Portfolio</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Handcrafted engineering solutions spanning serverless cloud architectures, AI
+          models, and enterprise microservices.</p>
+      </div>
+
+      <div class="projects-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="cloud">Cloud & DevOps</button>
+        <button class="filter-btn" data-filter="ai">AI & GenAI</button>
+        <button class="filter-btn" data-filter="backend">Backend & APIs</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </section>
+
+    <!-- Interactive 3D Cyber Terminal Section -->
+    <section id="terminal">
+      <div class="section-header">
+        <div class="section-badge"><i class="fa-solid fa-terminal"></i> Interactive Shell</div>
+        <h2 class="section-title">Developer Terminal</h2>
+        <p class="section-subtitle">Explore my profile through a live simulated Unix terminal. Type commands or click
+          the shortcut chips below.</p>
+      </div>
+
+      <div class="terminal-wrapper">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <div class="terminal-title">raja@cloud-matrix:~ (zsh)</div>
+          <div style="width: 48px;"></div>
+        </div>
+
+        <div class="terminal-chips">
+          <span class="prompt-chip" data-cmd="help">help</span>
+          <span class="prompt-chip" data-cmd="whoami">whoami</span>
+          <span class="prompt-chip" data-cmd="skills">skills</span>
+          <span class="prompt-chip" data-cmd="projects">projects</span>
+          <span class="prompt-chip" data-cmd="experience">experience</span>
+          <span class="prompt-chip" data-cmd="certs">certs</span>
+          <span class="prompt-chip" data-cmd="contact">contact</span>
+          <span class="prompt-chip" data-cmd="clear">clear</span>
+        </div>
+
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line t-accent">
+            🚀 Ratnala Raja Interactive Cyber-CLI [Version 2.5.0-cloud]
+          </div>
+          <div class="terminal-line t-output">
+            Type <span class="t-success">'help'</span> to view available commands, or click any chip above.
+          </div>
+        </div>
+
+        <div style="padding: 0 1.5rem 1.25rem 1.5rem;">
+          <div class="terminal-input-row">
+            <span class="t-prompt">raja@cloud:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input"
+              placeholder="Type a command (e.g. 'skills', 'projects', 'cat resume')..." autocomplete="off"
+              spellcheck="false">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Achievements Section -->
+    <section id="certifications">
+      <div class="section-header">
+        <div class="section-badge"><i class="fa-solid fa-award"></i> Credentials</div>
+        <h2 class="section-title">Certifications & Accolades</h2>
+        <p class="section-subtitle">Industry verified certifications and competitive problem-solving milestones.</p>
+      </div>
+
+      <div class="certs-grid" id="certs-grid-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+
+      <div class="section-header" style="margin-bottom: 2.5rem; margin-top: 1rem;">
+        <h3 style="font-size: 1.6rem;">Competitive Programming & Coding Profiles</h3>
+      </div>
+
+      <div class="achievements-grid" id="achievements-grid-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-badge"><i class="fa-solid fa-satellite-dish"></i> Get In Touch</div>
+        <h2 class="section-title">Let's Build Something Exceptional</h2>
+        <p class="section-subtitle">Have a project, role, or collaboration in mind? Reach out directly or send a
+          message.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="glass-card" style="padding: 2rem;">
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Direct Channels</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.75rem; font-size: 0.95rem;">
+              Feel free to connect via LinkedIn, inspect my code on GitHub, or send an email. I am always keen to
+              discuss cloud architecture, AI workflows, or exciting software roles.
+            </p>
+
+            <div class="contact-cards-stack">
+              <a href="mailto:rk635238@gmail.com" class="contact-tile">
+                <div class="tile-left">
+                  <div class="tile-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div>
+                    <div class="tile-label">Email</div>
+                    <div class="tile-val">rk635238@gmail.com</div>
+                  </div>
+                </div>
+                <button type="button" class="btn-icon copy-email-btn" id="copy-email-btn" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </a>
+
+              <a href="tel:+917903899968" class="contact-tile">
+                <div class="tile-left">
+                  <div class="tile-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div>
+                    <div class="tile-label">Phone</div>
+                    <div class="tile-val">+91 7903899968</div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-muted"></i>
+              </a>
+
+              <a href="https://www.linkedin.com/in/rajaratnala/" target="_blank" rel="noopener noreferrer"
+                class="contact-tile">
+                <div class="tile-left">
+                  <div class="tile-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                  <div>
+                    <div class="tile-label">LinkedIn</div>
+                    <div class="tile-val">in/rajaratnala</div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-muted"></i>
+              </a>
+
+              <a href="https://github.com/RatnalaRaja" target="_blank" rel="noopener noreferrer" class="contact-tile">
+                <div class="tile-left">
+                  <div class="tile-icon"><i class="fa-brands fa-github"></i></div>
+                  <div>
+                    <div class="tile-label">GitHub</div>
+                    <div class="tile-val">github.com/RatnalaRaja</div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-muted"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="portfolio-contact-form">
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Transmit a Message</h3>
+
+            <div class="form-group">
+              <label for="form-name" class="form-label">Your Name</label>
+              <input type="text" id="form-name" class="form-input" placeholder="e.g. Jane Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="form-label">Email Address</label>
+              <input type="email" id="form-email" class="form-input" placeholder="e.g. jane@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-subject" class="form-label">Subject</label>
+              <input type="text" id="form-subject" class="form-input" placeholder="Collaboration / Opportunity"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message</label>
+              <textarea id="form-message" class="form-textarea"
+                placeholder="Describe your inquiry, project scope, or opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="justify-content: center; margin-top: 0.5rem;">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Project Details Modal -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="" alt="" class="modal-hero-img" id="modal-img">
+      <div class="modal-body">
+        <div class="section-badge" id="modal-category">Category</div>
+        <h2 id="modal-title" style="font-size: 1.5rem;">Project Title</h2>
+        <div class="project-metrics" id="modal-metrics"></div>
+        <p id="modal-desc" style="color: var(--text-secondary); line-height: 1.8;"></p>
+        <div>
+          <h4
+            style="font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+            Technologies Used</h4>
+          <div class="timeline-tags" id="modal-tags"></div>
+        </div>
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" id="modal-github-link">
+            <i class="fa-brands fa-github"></i>
+            <span>View Source on GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Popup -->
+  <div class="toast-msg" id="toast-msg">
+    <i class="fa-solid fa-circle-check text-cyan"></i>
+    <span id="toast-text">Notification</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="ui-container footer-inner">
+      <div class="brand-monogram" style="width: 44px; height: 44px; font-size: 1.3rem;">RR</div>
+      <div class="footer-socials">
+        <a href="https://github.com/RatnalaRaja" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+          title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/rajaratnala/" target="_blank" rel="noopener noreferrer"
+          class="footer-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.hackerrank.com/ratnalaraja" target="_blank" rel="noopener noreferrer"
+          class="footer-social-link" title="HackerRank"><i class="fa-brands fa-hackerrank"></i></a>
+        <a href="mailto:rk635238@gmail.com" class="footer-social-link" title="Email"><i
+            class="fa-solid fa-envelope"></i></a>
+      </div>
+      <div class="footer-copy">
+        Crafted with Three.js & Modern Web Technologies • <strong>Ratnala Raja</strong> © 2026. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="data.js"></script>
+  <script type="module" src="three-scene.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
