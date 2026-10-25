@@ -844,47 +844,54 @@ class PortfolioApp {
       });
     });
 
+    let navScrollTicking = false;
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      const limit = document.documentElement.scrollHeight - window.innerHeight;
+      if (!navScrollTicking) {
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          const limit = document.documentElement.scrollHeight - window.innerHeight;
 
-      // Scrolled class
-      if (y > 20) {
-        navbar?.classList.add('scrolled');
-      } else {
-        navbar?.classList.remove('scrolled');
+          // Scrolled class
+          if (y > 20) {
+            navbar?.classList.add('scrolled');
+          } else {
+            navbar?.classList.remove('scrolled');
+          }
+
+          // Progress bar
+          if (progressBar && limit > 0) {
+            const progress = Math.min(1, Math.max(0, y / limit));
+            progressBar.style.transform = `scaleX(${progress})`;
+          }
+
+          // Active section highlighting
+          let current = '';
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (y >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+
+          if (current === 'certifications') current = 'experience';
+
+          let hasActive = false;
+          navLinks.forEach(link => {
+            const section = link.dataset.section;
+            const match = current && current === section;
+            if (match && !hasActive) {
+              link.classList.add('active');
+              hasActive = true;
+            } else {
+              link.classList.remove('active');
+            }
+          });
+
+          this.updateNavIndicator?.();
+          navScrollTicking = false;
+        });
+        navScrollTicking = true;
       }
-
-      // Progress bar
-      if (progressBar && limit > 0) {
-        const progress = Math.min(1, Math.max(0, y / limit));
-        progressBar.style.transform = `scaleX(${progress})`;
-      }
-
-      // Active section highlighting
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 140;
-        if (y >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      if (current === 'certifications') current = 'experience';
-
-      let hasActive = false;
-      navLinks.forEach(link => {
-        const section = link.dataset.section;
-        const match = current && current === section;
-        if (match && !hasActive) {
-          link.classList.add('active');
-          hasActive = true;
-        } else {
-          link.classList.remove('active');
-        }
-      });
-
-      this.updateNavIndicator?.();
     }, { passive: true });
   }
 
@@ -1047,16 +1054,11 @@ class PortfolioApp {
       );
 
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-      const mutationObs = new MutationObserver(() => {
-        document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
-      });
-      mutationObs.observe(document.body, { childList: true, subtree: true });
+    } else {
+      window.addEventListener('scroll', reveals, { passive: true });
+      window.addEventListener('resize', reveals, { passive: true });
     }
 
-    // Secondary & Fallback scroll/resize checks
-    window.addEventListener('scroll', reveals, { passive: true });
-    window.addEventListener('resize', reveals, { passive: true });
     reveals();
     setTimeout(reveals, 100);
     setTimeout(reveals, 350);

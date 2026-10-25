@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
+<body>
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-progress-bar" id="nav-progress-bar"></div>
@@ -347,6 +348,62 @@
 
   </div><!-- /#scroll-container -->
 
+  <!-- AI Agent Floating Widget -->
+  <div class="ai-widget" id="ai-widget">
+    <!-- Floating Launcher Button -->
+    <button type="button" class="ai-launcher-btn" id="ai-launcher-btn" aria-label="Open AI Assistant" aria-expanded="false" title="Ask Raja AI (⌘K)">
+      <span class="ai-pulse-dot" aria-hidden="true"></span>
+      <span class="ai-sparkle-icon" aria-hidden="true">✦</span>
+      <span class="ai-btn-text">Ask AI</span>
+      <kbd class="ai-kbd-hint">⌘K</kbd>
+    </button>
+
+    <!-- Chat Drawer / Modal -->
+    <div class="ai-drawer" id="ai-drawer" aria-hidden="true" role="dialog" aria-labelledby="ai-drawer-title">
+      <div class="ai-drawer-header">
+        <div class="ai-drawer-profile">
+          <div class="ai-avatar-ring">
+            <img src="https://avatars.githubusercontent.com/u/97797913?v=4" alt="Raja avatar" width="36" height="36">
+            <span class="ai-online-badge" aria-label="Online"></span>
+          </div>
+          <div class="ai-profile-meta">
+            <h3 class="ai-drawer-title" id="ai-drawer-title">Raja's AI Twin</h3>
+            <span class="ai-drawer-subtitle">Tricon Infotech · Cloud &amp; AI</span>
+          </div>
+        </div>
+        <div class="ai-drawer-actions">
+          <button type="button" class="ai-action-btn" id="ai-reset-btn" title="Clear conversation" aria-label="Clear chat">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </button>
+          <button type="button" class="ai-action-btn" id="ai-close-btn" title="Close AI Assistant" aria-label="Close">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="ai-drawer-messages" id="ai-drawer-messages" role="log" aria-live="polite">
+        <!-- Messages rendered dynamically -->
+      </div>
+
+      <!-- Quick Suggestion Chips -->
+      <div class="ai-chips-wrap" id="ai-chips-wrap">
+        <button type="button" class="ai-chip" data-query="Tell me about Raja's experience">Experience</button>
+        <button type="button" class="ai-chip" data-query="What is his mobile deployment project?">Mobile CI/CD</button>
+        <button type="button" class="ai-chip" data-query="What is his tech stack and skills?">Tech Stack</button>
+        <button type="button" class="ai-chip" data-query="Download Raja's resume">Resume</button>
+        <button type="button" class="ai-chip" data-query="How can I contact or hire Raja?">Contact</button>
+      </div>
+
+      <!-- Input Form -->
+      <form class="ai-drawer-form" id="ai-drawer-form" autocomplete="off">
+        <input type="text" class="ai-input" id="ai-input" placeholder="Ask anything about Raja..." maxlength="300" aria-label="Message to Raja AI">
+        <button type="submit" class="ai-send-btn" id="ai-send-btn" aria-label="Send message">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div class="toast" id="toast" role="alert" aria-live="polite">
     <i class="fa-solid fa-circle-check"></i>
@@ -355,6 +412,7 @@
 
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script src="ai-agent.js"></script>
 </body>
 
 </html>
