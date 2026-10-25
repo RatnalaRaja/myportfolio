@@ -117,13 +117,13 @@ class InteractiveCardAvatarController {
     }
 
     // 2. Pop speech bubble ("Hii! I am Raja")
-    if (this.speechBubble) {
-      this.speechBubble.classList.remove('hidden');
-      const titleEl = this.speechBubble.querySelector('.speech-main-text');
-      const subEl = this.speechBubble.querySelector('.speech-sub-text');
-      if (titleEl) titleEl.innerText = isManualClick ? 'Hii! I am Raja 👋' : 'Hii! I am Raja';
-      if (subEl) subEl.innerText = isManualClick ? 'Great to connect with you!' : 'Welcome to my space!';
-    }
+    // if (this.speechBubble) {
+    //   this.speechBubble.classList.remove('hidden');
+    //   const titleEl = this.speechBubble.querySelector('.speech-main-text');
+    //   const subEl = this.speechBubble.querySelector('.speech-sub-text');
+    //   if (titleEl) titleEl.innerText = isManualClick ? 'Hii! I am Raja 👋' : 'Hii! I am Raja';
+    //   if (subEl) subEl.innerText = isManualClick ? 'Great to connect with you!' : 'Welcome to my space!';
+    // }
 
     // 3. Play custom voice recording ("Hi, I am Raja")
     try {

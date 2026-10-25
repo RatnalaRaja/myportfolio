@@ -1,4 +1,4 @@
-export const portfolioData = {
+const portfolioData = window.portfolioData = {
   personal: {
     name: "Ratnala Raja",
     handle: "@RatnalaRaja",
@@ -29,7 +29,7 @@ export const portfolioData = {
       codechef: "https://www.codechef.com/",
       email: "mailto:rk635238@gmail.com"
     },
-    resumeUrl: "Ratnala_Raja_CV.pdf",
+    resumeUrl: "Ratnala_Raja_Resume.pdf",
     avatar: "https://avatars.githubusercontent.com/u/97797913?v=4"
   },
 
@@ -68,42 +68,39 @@ export const portfolioData = {
 
   experience: [
     {
-      company: "Tricon Infotech Pvt. Ltd.",
-      role: "Associate Software Engineer",
-      period: "Sep 2025 – Present",
-      location: "Bangalore, Karnataka, India",
-      type: "Full-time",
-      highlights: [
-        "Engineering enterprise software solutions and cloud-native application architectures.",
-        "Collaborating with cross-functional teams to design, develop, and deliver high-availability software products.",
-        "Leveraging modern cloud practices, CI/CD automation, and rigorous code reviews to maintain exceptional engineering quality."
-      ],
-      skillsUsed: ["Cloud Architecture", "Backend Engineering", "Microservices", "DevOps", "CI/CD"]
+      company: "Technical Hub Private Limited",
+      role: "Java Developer Intern",
+      period: "May 2023 – Jul 2023",
+      location: "Surampalem, India",
+      kind: "work",
+      bullets: [
+        "Enhanced programming proficiency by mastering complex Data Structures and Algorithms, achieving a 40% improvement in code efficiency.",
+        "Implemented object-oriented principles, modular architecture, and robust exception handling in Java."
+      ]
     },
     {
       company: "Technical Hub Private Limited",
       role: "AWS Cloud Computing Intern",
       period: "Aug 2023 – Dec 2023",
       location: "Surampalem, India",
-      type: "Internship",
-      highlights: [
+      kind: "work",
+      bullets: [
         "Architected and deployed scalable AWS cloud infrastructure leveraging EC2, S3, RDS, DynamoDB, VPC, and AWS Lambda.",
         "Led the migration of web applications to AWS cloud infrastructure, optimizing auto-scaling and high availability.",
         "Delivered a 30% reduction in operational infrastructure costs and improved system uptime by 25%."
-      ],
-      skillsUsed: ["AWS EC2", "AWS Lambda", "Amazon S3", "Amazon DynamoDB", "VPC", "CloudWatch"]
+      ]
     },
     {
-      company: "Technical Hub Private Limited",
-      role: "Java Developer Intern",
-      period: "May 2023 – Jul 2023",
-      location: "Surampalem, India",
-      type: "Internship",
-      highlights: [
-        "Enhanced programming proficiency by mastering complex Data Structures and Algorithms, achieving a 40% improvement in code efficiency.",
-        "Implemented object-oriented principles, modular architecture, and robust exception handling in Java."
-      ],
-      skillsUsed: ["Java", "Data Structures", "Algorithms", "OOP", "Debugging"]
+      company: "Tricon Infotech Pvt. Ltd.",
+      role: "Associate Software Engineer",
+      period: "Jun 2025 – Present",
+      location: "Bangalore, India",
+      kind: "work",
+      bullets: [
+        "Engineered automated CI/CD deployment pipelines using Fastlane and GitHub Actions, cutting release cycles by 70%.",
+        "Architected and deployed scalable cloud-native microservices with Docker, AWS, and secure RESTful APIs.",
+        "Collaborated with cross-functional engineering teams to deliver high-availability enterprise software solutions."
+      ]
     }
   ],
 
@@ -111,27 +108,25 @@ export const portfolioData = {
     {
       degree: "B.Tech in Computer Science and Engineering (IoT)",
       institution: "Aditya College of Engineering and Technology (ACET)",
+      location: "Surampalem, India",
       period: "2021 – 2025",
-      score: "GPA: 7.9 / 10",
-      details: "Comprehensive coursework in Distributed Systems, Operating Systems, Database Management, IoT Embedded Systems, and Computer Networks."
-    },
-    {
-      degree: "Intermediate Education (PCM - Physics, Chemistry, Mathematics)",
-      institution: "Kerala Public School",
-      period: "2018 – 2020",
-      score: "GPA: 8.70 / 10",
-      details: "Strong foundation in higher mathematics, physical sciences, and computational problem solving."
-    },
-    {
-      degree: "Matriculation (Science)",
-      institution: "Kerala Public School",
-      period: "Completed 2018",
-      score: "GPA: 8.42 / 10",
-      details: "Graduated with academic excellence across core science and mathematics curriculums."
+      kind: "education"
     }
   ],
 
   projects: [
+    {
+      id: "mobile-deployment",
+      title: "Automated Mobile CI/CD with Fastlane & GitHub Actions",
+      category: "cloud",
+      categoryLabel: "DevOps & Mobile CI/CD",
+      description: "Automated end-to-end continuous deployment pipeline delivering iOS & Android mobile releases to TestFlight, App Store, and Google Play.",
+      longDescription: "Engineered automated multi-platform mobile build and release pipelines utilizing Fastlane and GitHub Actions at Tricon Infotech. Automated code signing, provisioning profile management, unit testing, asset compilation, and automated store artifact uploads, slashing release cycles by 70% and eliminating manual deployment errors.",
+      tags: ["Fastlane", "GitHub Actions", "CI/CD", "iOS", "Android", "Docker"],
+      image: "logos/github-actions.svg",
+      github: "https://github.com/RatnalaRaja/github-actions-demo",
+      metrics: ["-70% Release Cycle", "Automated Code Signing", "Zero-Touch Store Upload"]
+    },
     {
       id: "email-automate",
       title: "Revolutionizing Email Outreach with AWS Lambda",
@@ -246,28 +241,69 @@ export const portfolioData = {
 
   achievements: [
     {
-      platform: "HackerRank",
-      title: "5 Star in Python & C++",
-      rating: "★★★★★",
-      desc: "Top proficiency in algorithm design, object-oriented paradigms, and standard library utilization."
+      id: "cicd-fastlane",
+      num: "01",
+      total: "05",
+      type: "metric",
+      number: 70,
+      suffix: "%",
+      title: "Mobile CI/CD Acceleration",
+      subtitle: "Reduction in release delivery time via Fastlane & GitHub Actions automation",
+      details: "Automated iOS & Android App Store / Play Store pipelines at Tricon Infotech",
+      tint: "rgba(33, 114, 229, 0.16)",
+      logoUrl: "logos/github-actions.svg"
     },
     {
-      platform: "HackerRank",
-      title: "4 Star in SQL",
-      rating: "★★★★☆",
-      desc: "Complex database queries, aggregations, relational joins, subqueries, and database schema manipulation."
+      id: "cloud-cost",
+      num: "02",
+      total: "05",
+      type: "metric",
+      number: 30,
+      suffix: "%",
+      title: "Cloud Cost Optimization",
+      subtitle: "Reduction in operational infrastructure expenses through AWS workload rightsizing",
+      details: "AWS EC2, S3, RDS & Lambda architecture migration at Technical Hub",
+      tint: "rgba(255, 153, 0, 0.16)",
+      logoUrl: "logos/aws.svg"
     },
     {
-      platform: "CodeChef",
-      title: "2 Star Competitive Coder",
-      rating: "★★☆☆☆",
-      desc: "Regular participant in global competitive programming rounds solving mathematical and algorithmic challenges under time pressure."
+      id: "uptime-boost",
+      num: "03",
+      total: "05",
+      type: "metric",
+      number: 25,
+      suffix: "%",
+      title: "System Uptime Increase",
+      subtitle: "Enhancement in production system availability and automated failover",
+      details: "High-availability multi-tier VPC & real-time Amazon CloudWatch telemetry",
+      tint: "rgba(34, 197, 94, 0.16)",
+      logoUrl: "logos/aws.svg"
     },
     {
-      platform: "LeetCode & GFG",
-      title: "Data Structures & Algorithms",
-      rating: "Active",
-      desc: "Consistent practice solving graph traversal, dynamic programming, tree manipulation, and optimization problems."
+      id: "outreach-lambda",
+      num: "04",
+      total: "05",
+      type: "metric",
+      number: 150,
+      suffix: "%",
+      title: "Serverless Outreach Capacity",
+      subtitle: "Surge in automated email broadcast operations with 40% lower processing latency",
+      details: "Event-driven architecture with AWS Lambda, Amazon SES & EventBridge",
+      tint: "rgba(147, 51, 234, 0.16)",
+      logoUrl: "logos/aws.svg"
+    },
+    {
+      id: "deepfake-accuracy",
+      num: "05",
+      total: "05",
+      type: "metric",
+      number: 25,
+      suffix: "%",
+      title: "DeepFake Detection Precision",
+      subtitle: "Improvement in facial manipulation detection outcomes & synthetic media classification",
+      details: "Deep learning computer vision pipeline with Python, OpenCV & cloud inference",
+      tint: "rgba(59, 130, 246, 0.16)",
+      logoUrl: "logos/python.svg"
     }
   ]
 };
