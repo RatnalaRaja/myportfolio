@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c14"/>
+      <stop offset="100%" stop-color="#1e2b1e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#bgGrad)" stroke="#324732" stroke-width="2"/>
+  <text x="32" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Space Grotesk', 'Inter', sans-serif" font-size="24" font-weight="800" letter-spacing="-1px" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">RR</text>
+</svg>
