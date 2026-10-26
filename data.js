@@ -30,7 +30,7 @@ const portfolioData = window.portfolioData = {
       email: "mailto:rk635238@gmail.com"
     },
     resumeUrl: "Ratnala_Raja_Resume.pdf",
-    avatar: "https://avatars.githubusercontent.com/u/97797913?v=4"
+    avatar: "raja-linkedin.jpg"
   },
 
   skills: {

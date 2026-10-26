@@ -4,20 +4,22 @@
    Clean light theme | Modern typography
    ═══════════════════════════════════════════ */
 
-/* ── CSS Variables ── */
+/* ── CSS Variables (Nordic Sage) ── */
 :root {
-  --bg: #f4f2ee;
-  --bg-section-alt: #eae8e3;
-  --bg-card: #f9f8f6;
+  --bg: #f1f3ee;
+  --bg-section-alt: #e4e7e0;
+  --bg-card: #f8faf5;
   --bg-card-hover: #ffffff;
-  --bg-dark: #0d0d0d;
-  --text-primary: #0d0d0d;
-  --text-secondary: #555555;
-  --text-muted: #888888;
-  --text-light: #aaaaaa;
-  --border: rgba(13, 13, 13, 0.10);
-  --border-dark: rgba(13, 13, 13, 0.65);
-  --accent: #0d0d0d;
+  --bg-dark: #141c14;
+  --text-primary: #141c14;
+  --text-secondary: #4a544a;
+  --text-muted: #738073;
+  --text-light: #9fae9f;
+  --border: rgba(20, 28, 20, 0.08);
+  --border-dark: rgba(20, 28, 20, 0.65);
+  --accent: #1e2b1e;
+  --watermark-color: #dee3db;
+  --nav-pill-bg: rgba(255, 255, 255, 0.82);
 
   --font-sans: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -64,6 +66,7 @@ body {
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease);
 }
 
 a { color: inherit; text-decoration: none; }
@@ -218,7 +221,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: background 0.5s var(--ease), box-shadow 0.5s var(--ease), backdrop-filter 0.5s;
 }
 .navbar.scrolled .nav-links {
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--nav-pill-bg, rgba(255, 255, 255, 0.72));
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: inset 0 0 0 1px var(--border), 0 12px 32px -16px rgba(13,13,13,0.25);
@@ -322,7 +325,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: -0.05em;
   line-height: 0.8;
   font-size: clamp(110px, 24vw, 380px);
-  color: #e4e1da;
+  color: var(--watermark-color, #e4e1da);
+  transition: color 0.35s var(--ease);
   user-select: none;
   pointer-events: none;
   white-space: nowrap;
@@ -2882,4 +2886,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     border-bottom: none;
   }
 }
+
+
 
