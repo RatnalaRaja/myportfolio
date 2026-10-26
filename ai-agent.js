@@ -100,8 +100,9 @@ class PortfolioAIAgent {
       skills: {
         cloudDevops: ["AWS (EC2, S3, RDS, Lambda, VPC, IAM)", "Microsoft Azure", "Docker", "Kubernetes", "Terraform", "CI/CD & GitHub Actions", "Fastlane", "Linux & Bash"],
         aiGenai: ["RAG & LangChain", "AI Agents & Autonomous Workflows", "PyTorch & TensorFlow", "OpenCV Computer Vision", "LLM Fine-tuning & Embeddings"],
-        backend: ["Python", "FastAPI Microservices", "Django", "Node.js", "PostgreSQL, MongoDB & DynamoDB", "RESTful & GraphQL APIs"],
-        languages: ["C++", "Python", "Java", "JavaScript / ES6", "Data Structures & Algorithms"]
+        backend: ["FastAPI Microservices", "Django", "Node.js", "PostgreSQL, MongoDB & DynamoDB", "RESTful APIs"],
+        observability: ["New Relic (APM & Infrastructure Monitoring)", "LangSmith (LLM Tracing & Evaluation)"],
+        languages: ["C++", "Python", "JavaScript / ES6", "Data Structures & Algorithms"]
       }
     };
 
@@ -398,9 +399,9 @@ class PortfolioAIAgent {
     }
 
     // 5. Skills & Tech Stack
-    if (/skill|tech stack|technology|tools|language|languages|aws|azure|docker|kubernetes|python|backend/i.test(q)) {
+    if (/skill|tech stack|technology|tools|language|languages|aws|azure|docker|kubernetes|python|backend|observability|new relic|langsmith/i.test(q)) {
       return {
-        text: `Raja's technical core is organized across four specialized domains:\n\n- **Cloud & DevOps:** AWS, Azure, Docker, Kubernetes, Terraform, Fastlane, GitHub Actions, Linux/Bash\n- **AI & GenAI:** RAG & LangChain, Autonomous Agents, PyTorch, OpenCV, Model fine-tuning\n- **Backend:** Python, FastAPI, Django, Node.js, PostgreSQL, DynamoDB, MongoDB\n- **Languages:** C++, Python, Java, JavaScript (ES6+), Data Structures & Algorithms`,
+        text: `Raja's technical core is organized across five specialized domains:\n\n- **Cloud & DevOps:** AWS, Azure, Docker, Kubernetes, Terraform, Fastlane, GitHub Actions, Linux/Bash\n- **AI & GenAI:** RAG & LangChain, Autonomous Agents, PyTorch, OpenCV, Model fine-tuning\n- **Backend:** FastAPI, Django, Node.js, PostgreSQL, DynamoDB, MongoDB, RESTful APIs\n- **Observability Tools:** New Relic (APM & Infrastructure), LangSmith (LLM Tracing & Evaluation)\n- **Languages:** C++, Python, JavaScript (ES6+), Data Structures & Algorithms`,
         actions: [
           { label: "Open Skills Periodic Table", type: "scroll_to", targetId: "skills" }
         ]

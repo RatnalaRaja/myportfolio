@@ -45,6 +45,7 @@ class PortfolioApp {
       cloudDevops: 'Cloud & DevOps',
       aiGenAI: 'AI & GenAI',
       backend: 'Backend',
+      observability: 'Observability Tools',
       languagesDsa: 'Languages & DSA'
     };
 
@@ -87,10 +88,11 @@ class PortfolioApp {
       cloudDevops: 'Cloud & DevOps',
       aiGenAI: 'AI & GenAI',
       backend: 'Backend',
+      observability: 'Observability Tools',
       languagesDsa: 'Languages & DSA'
     };
 
-    const categories = ['all', 'cloudDevops', 'aiGenAI', 'backend', 'languagesDsa'];
+    const categories = ['all', 'cloudDevops', 'aiGenAI', 'backend', 'observability', 'languagesDsa'];
 
     categories.forEach(cat => {
       const count = cat === 'all'

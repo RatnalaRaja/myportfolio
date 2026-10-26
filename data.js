@@ -51,11 +51,15 @@ const portfolioData = window.portfolioData = {
       { name: "OpenCV", level: 80, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg", desc: "Computer vision, Face manipulation & DeepFake detection" }
     ],
     backend: [
-      { name: "RESTful APIs", level: 90, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg", desc: "RESTful endpoints,JWT authentication" },
+      { name: "RESTful APIs", level: 90, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg", desc: "RESTful endpoints, JWT authentication" },
       { name: "FastAPI", level: 88, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg", desc: "High-speed REST APIs, Pydantic, Swagger documentation" },
       { name: "Django", level: 80, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg", desc: "Full-stack apps, ORM, Auth, Nginx reverse proxy" },
       { name: "Node.js", level: 75, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg", desc: "Express.js, Event loop, REST API microservices" },
       { name: "Databases", level: 85, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg", desc: "PostgreSQL, MySQL, MongoDB, Redis caching" }
+    ],
+    observability: [
+      { name: "New Relic", level: 85, icon: "logos/newrelic.svg", desc: "APM, Distributed Tracing, Infrastructure Monitoring, Alerting & Metrics" },
+      { name: "LangSmith", level: 88, icon: "logos/langsmith.svg", desc: "LLM Observability, Prompt Tracing, Evaluation & Debugging, Token Tracking" }
     ],
     languagesDsa: [
       { name: "Python", level: 94, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg", desc: "Data Structures, Algorithms, Core OOP, Automation & Problem Solving" },
