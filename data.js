@@ -35,7 +35,7 @@ const portfolioData = window.portfolioData = {
 
   skills: {
     cloudDevops: [
-      { name: "AWS", level: 90, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", desc: "EC2, S3, Lambda, VPC, RDS, DynamoDB, SES, CloudWatch" },
+      { name: "AWS", level: 90, icon: "logos/aws.svg", desc: "EC2, S3, Lambda, VPC, RDS, DynamoDB, SES, CloudWatch" },
       { name: "Microsoft Azure", level: 82, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg", desc: "Azure VMs, Blob, Resource Groups, App Services" },
       { name: "Docker", level: 88, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg", desc: "Containerization, Multi-stage builds, Docker Compose" },
       { name: "Kubernetes", level: 80, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-original.svg", desc: "Pods, Deployments, Services, Cluster Orchestration" },
@@ -51,7 +51,7 @@ const portfolioData = window.portfolioData = {
       { name: "OpenCV", level: 80, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg", desc: "Computer vision, Face manipulation & DeepFake detection" }
     ],
     backend: [
-      { name: "Python", level: 92, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg", desc: "Core language, AsyncIO, OOP, Scripting & Data processing" },
+      { name: "RESTful APIs", level: 90, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg", desc: "RESTful endpoints,JWT authentication" },
       { name: "FastAPI", level: 88, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg", desc: "High-speed REST APIs, Pydantic, Swagger documentation" },
       { name: "Django", level: 80, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg", desc: "Full-stack apps, ORM, Auth, Nginx reverse proxy" },
       { name: "Node.js", level: 75, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg", desc: "Express.js, Event loop, REST API microservices" },
@@ -60,9 +60,8 @@ const portfolioData = window.portfolioData = {
     languagesDsa: [
       { name: "Python", level: 94, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg", desc: "Data Structures, Algorithms, Core OOP, Automation & Problem Solving" },
       { name: "C++", level: 90, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg", desc: "STL, Algorithms, Competitive Programming, OOP" },
-      { name: "Java", level: 82, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg", desc: "OOP principles, Collections framework, Exception handling" },
       { name: "JavaScript / ES6", level: 85, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg", desc: "Modern frontend logic, WebGL / Three.js, Async/Await" },
-      { name: "DSA Problem Solving", level: 90, icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg", desc: "Graphs, Trees, DP, Hash Maps, HackerRank 5★ & CodeChef 2★" }
+      { name: "DSA Problem Solving", level: 90, icon: "logos/hackerrank.svg", desc: "Graphs, Trees, DP, Hash Maps, HackerRank 5★" }
     ]
   },
 
@@ -206,14 +205,14 @@ const portfolioData = window.portfolioData = {
       title: "AWS Certified Cloud Practitioner",
       issuer: "Amazon Web Services (AWS)",
       badge: "AWS",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      icon: "logos/aws.svg",
       description: "Demonstrated comprehensive understanding of AWS Cloud concepts, global infrastructure, security, compliance, core services, and billing practices."
     },
     {
       title: "AWS AI Certified",
       issuer: "Amazon Web Services (AWS)",
       badge: "AWS AI",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      icon: "logos/aws.svg",
       description: "Specialized credential in AWS AI services, Machine Learning workflows, Generative AI fundamentals, and Amazon Bedrock integration."
     },
     {

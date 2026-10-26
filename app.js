@@ -160,7 +160,7 @@ class PortfolioApp {
     card.innerHTML = `
       <div class="skill-detail-num-cat">${String(num).padStart(2, '0')} · ${skill.categoryLabel.toUpperCase()}</div>
       <div class="skill-detail-icon-wrap">
-        <img src="${skill.icon}" alt="${skill.name}" onerror="this.style.display='none'">
+        <img src="${skill.icon || 'logos/aws.svg'}" alt="${skill.name}" onerror="if (!this.dataset.triedFallback && ('${skill.name}'.toLowerCase().includes('aws'))) { this.dataset.triedFallback = 'true'; this.src = 'logos/aws.svg'; } else { this.style.display = 'none'; }">
       </div>
       <div class="skill-detail-name">${skill.name}</div>
       <div class="skill-detail-used-in">ABOUT</div>
